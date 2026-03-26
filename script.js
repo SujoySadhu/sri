@@ -5,12 +5,43 @@
 (function () {
     'use strict';
 
+    // ---- HARDCODED PASSWORD ----
+    const SECRET_PASSWORD = 'su';
+
     // ---- DOM REFERENCES ----
+    const passwordGate = document.getElementById('passwordGate');
+    const gateForm = document.getElementById('gateForm');
+    const passwordInput = document.getElementById('password');
+    const gateError = document.getElementById('gateError');
     const introScreen = document.getElementById('introScreen');
     const mainContent = document.getElementById('mainContent');
     const heartsContainer = document.getElementById('heartsContainer');
     const sparkleContainer = document.getElementById('sparkleContainer');
     const finalHearts = document.getElementById('finalHearts');
+
+    // ---- PASSWORD GATE ----
+    gateForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const pass = passwordInput.value.trim();
+
+        if (pass === SECRET_PASSWORD) {
+            // Success — hide gate, show intro
+            gateError.textContent = '';
+            passwordGate.classList.add('hidden');
+
+            setTimeout(() => {
+                passwordGate.style.display = 'none';
+                introScreen.classList.remove('hidden-initial');
+                introScreen.classList.add('show');
+            }, 800);
+        } else {
+            // Wrong password — shake & show error
+            gateError.textContent = '💔 Wrong password. Try again!';
+            gateForm.classList.add('shake');
+            setTimeout(() => gateForm.classList.remove('shake'), 500);
+        }
+    });
 
     // ---- INTRO SCREEN ----
     introScreen.addEventListener('click', openLetter);

@@ -53,6 +53,143 @@ body {
 }
 
 /* ========================================
+   PASSWORD GATE
+   ======================================== */
+.password-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at center, #1a0a2e 0%, #0d0015 70%);
+    transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+}
+
+.password-gate.hidden {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+}
+
+.gate-content {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.gate-heart {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: pulse 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(196, 77, 255, 0.5));
+}
+
+.gate-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.3rem;
+}
+
+.gate-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.gate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.4rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.gate-input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.gate-input::placeholder {
+    color: rgba(184, 169, 204, 0.5);
+}
+
+.gate-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.15), 0 0 20px rgba(255, 107, 157, 0.1);
+}
+
+.gate-btn {
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s, filter 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.gate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.35);
+    filter: brightness(1.1);
+}
+
+.gate-btn:active {
+    transform: translateY(0);
+}
+
+.gate-error {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    min-height: 1.4rem;
+    margin-top: 0.3rem;
+    transition: opacity 0.3s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+}
+
+.gate-form.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* ========================================
    INTRO SCREEN
    ======================================== */
 .intro-screen {
@@ -65,6 +202,16 @@ body {
     background: radial-gradient(ellipse at center, #1a0a2e 0%, #0d0015 70%);
     cursor: pointer;
     transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+}
+
+.intro-screen.hidden-initial {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-screen.show {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .intro-screen.hidden {
