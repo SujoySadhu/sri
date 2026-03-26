@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, Bubie ❤️</title>
+    <meta name="description" content="A heartfelt message for someone special.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container" id="heartsContainer" aria-hidden="true"></div>
+
+    <!-- Sparkle Cursor Trail -->
+    <div class="sparkle-container" id="sparkleContainer" aria-hidden="true"></div>
+
+    <!-- Loading / Intro Screen -->
+    <div class="intro-screen" id="introScreen">
+        <div class="intro-content">
+            <div class="intro-heart">💖</div>
+            <p class="intro-text">Tap to open your letter…</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+
+        <!-- Section 1: I'm Sorry -->
+        <section class="section section-sorry" id="sectionSorry">
+            <div class="section-inner">
+                <div class="glassmorphism-card card-sorry">
+                    <div class="emoji-float">🥺</div>
+                    <h1 class="heading heading-sorry">Am I Sorry, Bubie?</h1>
+                    <div class="divider"></div>
+                    <p class="message">
+                        I know I'm not perfect, and sometimes I mess things up.
+                        But please know that every moment I spend without your smile
+                        feels like an eternity. <strong>I'm truly, deeply sorry.</strong>
+                    </p>
+                    <div class="pulse-heart">💔</div>
+                </div>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <span class="scroll-arrow">↓</span>
+            </div>
+        </section>
+
+        <!-- Section 2: I Love You -->
+        <section class="section section-love" id="sectionLove">
+            <div class="section-inner">
+                <div class="glassmorphism-card card-love">
+                    <div class="emoji-float">✨</div>
+                    <h2 class="heading heading-love">I Love You</h2>
+                    <div class="divider divider-love"></div>
+                    <p class="message">
+                        With every heartbeat, with every breath,
+                        you are the one I choose — <em>again and again</em>.
+                        My love for you is infinite, unconditional,
+                        and <strong>forever unshakeable.</strong>
+                    </p>
+                    <div class="love-hearts-row">
+                        <span class="bounce-heart" style="--delay: 0s">❤️</span>
+                        <span class="bounce-heart" style="--delay: 0.2s">💕</span>
+                        <span class="bounce-heart" style="--delay: 0.4s">💗</span>
+                        <span class="bounce-heart" style="--delay: 0.6s">💖</span>
+                        <span class="bounce-heart" style="--delay: 0.8s">❤️</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: I Miss You -->
+        <section class="section section-miss" id="sectionMiss">
+            <div class="section-inner">
+                <div class="glassmorphism-card card-miss">
+                    <div class="emoji-float">🌙</div>
+                    <h2 class="heading heading-miss">I Miss You</h2>
+                    <div class="divider divider-miss"></div>
+                    <p class="message">
+                        Every second away from you feels like a lifetime.
+                        The world feels quieter, the colours feel dimmer.
+                        <strong>I miss your laugh, your warmth, your everything.</strong>
+                    </p>
+                    <p class="message message-small">
+                        Come back to me soon. 🌹
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Section: Forever -->
+        <section class="section section-forever" id="sectionForever">
+            <div class="section-inner">
+                <div class="final-message">
+                    <p class="forever-text">Forever & Always,</p>
+                    <p class="forever-signature">Yours only 💞</p>
+                    <div class="final-hearts" id="finalHearts"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
